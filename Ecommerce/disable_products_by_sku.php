@@ -78,3 +78,4 @@ $attributes_array = array(
         ''
     ),
 );
+//TEST: Enable products by attributes
