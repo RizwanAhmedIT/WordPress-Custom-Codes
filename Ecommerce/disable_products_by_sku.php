@@ -36,6 +36,26 @@ disable_products_by_sku($sku_array);
 
 //***************************************************************************************
 
+//function accepts an array of target ids as its parameter
+function disable_products_by_id($target_id_array)
+{
+    // Loop through each target ID
+    foreach ($target_id_array as $target_id) {
+        // Update the product to disable it
+        wp_update_post(array(
+            'ID'          => $target_id,
+            'post_status' => 'draft',
+        ));
+    }
+}
+
+// Example usage: Disable products with given IDs
+$id_array = array(872, 4, 6, 8);
+// Call the function
+disable_products_by_id($id_array);
+
+//***************************************************************************************
+
 // Function to disable products by multiple attributes
 function disable_products_by_attributes($attributes_array)
 {
